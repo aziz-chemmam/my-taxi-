@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -36,3 +37,13 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+                                    ///ADMIN ROUTE
+Route::get('/admin',[AdminController::class, 'create'])->name('admin'); 
+Route::get('/login',[AdminController::class, 'create'])->name('admin_login'); 
+Route::get('/admin',[AdminController::class, 'create'])->name('admin'); 
+
+
+
+                                    ///END ADMIN ROUTE
