@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -28,15 +27,13 @@ class AdminController extends Controller
     {
         return view('/admin.admin');
     }
-
+    
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-      
-        $user = user::all();
-
+        //
     }
 
     /**

@@ -1,5 +1,5 @@
 @extends('incfile.header')
-@section( 'content' )
+@section('content')
 
 <div id="body" class="bg-slate-50 h-screen flex">
     <nav class="bg-white w-80 h-screen flex flex-col gap-10 border-r border-slate-100">
@@ -8,7 +8,7 @@
             <img class="w-24 rounded-full shadow-xl" src="https://w7.pngwing.com/pngs/340/946/png-transparent-avatar-user-computer-icons-software-developer-avatar-child-face-heroes-thumbnail.png">
             <div class="flex flex-col items-center">
                 <span class="font-semibold text-lg text-emerald-700">UserName</span>
-                <span class="text-slate-400 text-sm">ADMIN</span>
+                <span class="text-slate-400 text-sm">Role</span>
             </div>
            
         </div>
@@ -35,7 +35,7 @@
     </nav>
     <div class="right w-full flex gap-2 flex-col">
         <div class="p-4">
-            <h1 class="text-xl font-semibold text-slate-500 mt-8 ml-20 page-title">Passengers</h1>
+            <h1 class="text-xl font-semibold text-slate-500 mt-8 ml-20 page-title">Page Name</h1>
         </div>
         <div>
            
@@ -77,8 +77,29 @@
             </tr>
         </thead>
         <tbody>
-
+            @foreach ($user as  $users)
+            <tr class="text-gray-900 dark:text-white">
+              
+              <td class="px-8 py-4 whitespace-nowrap">
+                {{ $users->id }}
+              </td>
+              <td class="px-8 py-4 whitespace-nowrap">
+                {{ $usesr->name }}
+              </td>
+              <td class="px-8 py-4 text-blueGray-600">{{$users->email}}</td>
+              <td class="px-8 py-4 text-blueGray-600 font-semibold">{{$users->username}}</td>
+              <td class="px-8 py-4 ">
+                {{$users->phone}}
+              </td>
+              <td class="px-2 py-4 whitespace-nowrap text-right text-sm font-medium">
+                <a href="#" class="text-green-600 hover:text-green-900">Edit</a> | 
+                <a href="#" class="text-red-600 hover:text-red-900">Delete</a>
+              </td>
+            </tr>
+                
+            @endforeach
         </tbody>
     </table>
+  
 
 @endsection
