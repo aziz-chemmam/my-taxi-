@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,12 +13,13 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('/admin.passenger');
+       $user = User::all();
+        return view('/admin.users',compact('user'));
     }
 
-    public function drivers()
+    public function logout()
     {
-        return view('/admin.drivers');
+       return view('/auth.login');
     }
 
     /**
@@ -27,6 +29,8 @@ class AdminController extends Controller
     {
         return view('/admin.admin');
     }
+
+    
     
     /**
      * Store a newly created resource in storage.
