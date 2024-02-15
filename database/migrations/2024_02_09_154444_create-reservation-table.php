@@ -17,10 +17,10 @@ return new class extends Migration
                 $table->unsignedBigInteger('driver_id');
                 $table->unsignedBigInteger('passenger_id');
                 $table->string('status');
-                $table->unsignedBigInteger('route_id');
+                $table->unsignedBigInteger('trajet_id');
                 $table->foreign('driver_id')->references('id')->on('drivers')->cascadeOnDelete()->cascadeOnUpdate();
                 $table->foreign('passenger_id')->references('id')->on('passengers')->cascadeOnDelete()->cascadeOnUpdate();
-                $table->foreign('route_id')->references('id')->on('routes')->cascadeOnDelete()->cascadeOnUpdate();
+                $table->foreign('trajet_id')->references('id')->on('trajets')->cascadeOnDelete()->cascadeOnUpdate();
                 $table->timestamps();
             });
         }

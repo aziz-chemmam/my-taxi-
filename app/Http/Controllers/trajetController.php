@@ -2,17 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\route;
+use App\Models\trajet;
 use Illuminate\Http\Request;
 
-class RouteController extends Controller
+class trajetController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        return view('/drivers.trajet');
     }
 
     /**
@@ -20,7 +20,7 @@ class RouteController extends Controller
      */
     public function create()
     {
-        //
+       
     }
 
     /**
@@ -28,13 +28,19 @@ class RouteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $trajet = trajet::create([
+        'depart'=> $request->input('depart'),
+        'destination' => $request->input('destination'), 
+        'place' => $request->input('place'), 
+        'devis' => $request->input('devis'),  
+         ]);
+        return redirect('trajet')->with('Success');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(route $route)
+    public function show(trajet $trajet)
     {
         //
     }
@@ -42,7 +48,7 @@ class RouteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(route $route)
+    public function edit(trajet $trajet)
     {
         //
     }
@@ -50,7 +56,7 @@ class RouteController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, route $route)
+    public function update(Request $request, trajet $trajet)
     {
         //
     }
@@ -58,7 +64,7 @@ class RouteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(route $route)
+    public function destroy(trajet $trajet)
     {
         //
     }

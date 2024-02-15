@@ -11,7 +11,7 @@ class login extends Controller
      */
     public function index()
     {
-        //
+        // return view('logiin');
     }
 
     /**

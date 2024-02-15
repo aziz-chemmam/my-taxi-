@@ -35,7 +35,13 @@ require __DIR__.'/auth.php';
 
 Auth::routes();
 
-Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/users', [App\Http\Controllers\AdminController::class,'index'])->name('admin');
 Route::get('/auth.login', [App\Http\Controllers\AdminController::class,'logout'])->name('auth.login');
+Route::get('/booking',[App\Http\Controllers\PassengerController::class,'index'])->name('passenger.home');
+Route::get('/trajet',[App\Http\Controllers\trajetController::class,'index'])->name('trajet');
+Route::post('/trajet',[App\Http\Controllers\trajetController::class,'store'])->name('trajet.create');
+
+
 

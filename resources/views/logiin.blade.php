@@ -24,12 +24,12 @@
                         Sign In
                     </h1>
                     <div class="w-full flex-1 mt-8">
-                        <form action="" method="POST" >
+                        <form action="" method="POST" action="{{ route('login') }}" >
                             @csrf
                             <div class="mx-auto max-w-xs">
 
                                 <input
-                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
+                                    class="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white @error('email') is-invalid @enderror "
                                     type="text" placeholder="Email Or Username"
                                     id= "email"
                                     name="email"

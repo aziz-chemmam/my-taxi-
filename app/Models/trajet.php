@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class route extends Model
+class trajet extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'depart',
+        'destination', 
+        'place', 
+        'devis',
+    ];
 }

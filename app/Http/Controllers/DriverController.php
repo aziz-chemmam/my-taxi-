@@ -12,7 +12,7 @@ class DriverController extends Controller
      */
     public function index()
     {
-        //
+        return view('/drivers.trajet');
     }
 
     /**
@@ -20,7 +20,8 @@ class DriverController extends Controller
      */
     public function create()
     {
-        //
+        
+        
     }
 
     /**
@@ -28,7 +29,7 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     
     }
 
     /**

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\Models\admin;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class AdminController extends Controller
 
     public function logout()
     {
-       return view('/auth.login');
+        session::flush();
+        auth::logout();
+       return to_route('login');
     }
 
     /**

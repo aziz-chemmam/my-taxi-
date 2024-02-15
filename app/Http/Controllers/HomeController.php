@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -16,13 +16,20 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Contracts\Support\Renderable
-     */
     public function index()
     {
-        return view('/admin.admin');
+        
+        if (Auth::check()) {
+            $role = auth()->user()->role;
+            if ($role === 'ADMIN') {
+                return view('/admin.admin');
+            } elseif ($role === 'passenger') {
+                $routes = collect();
+                return view('/passenger.home', ['routes' => $routes]);
+            } elseif ($role === 'driver') {
+                return view('/drivers.trajet');
+            }
+        }
     }
-}
+ }
+
